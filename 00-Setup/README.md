@@ -25,7 +25,7 @@ Note :
 vagrant.exe ssh master
 sudo su - 
 git clone https://github.com/amitvashisttech/kubernetes-adv-aristocrat-17-June-2024.git
-cd 00-Setup
+cd kubernetes-adv-aristocrat-17-June-2024/00-Setup
 sh install-k8s-master-node.sh
 
 ---
@@ -69,11 +69,11 @@ k8s-master   Ready    master   5m6s   v1.18.0
 vagrant.exe ssh woker1
 sudo su - 
 git clone https://github.com/amitvashisttech/kubernetes-adv-aristocrat-17-June-2024.git
-cd 00-Setup
+cd kubernetes-adv-aristocrat-17-June-2024/00-Setup
 sh install-k8s-worker-node.sh
 ```
 
-## Now apply the joining token on both the workers
+## Now apply the joining token on both the workers what you have recived on your master node. 
 ```
 kubeadm join 172.31.0.100:6443 --token mr74fn.m4upjko4cfm5uwmz --discovery-token-ca-cert-hash sha256:cb406434a7f06d213eabfce7d6980b3948525d13e1c25b9f061831039bf49f52
 ```
