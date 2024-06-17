@@ -10,9 +10,19 @@ kubectl get pods -n kube-system | grep -i  etcd
 kubectl exec -it etcd-master -n kube-system   -- /bin/sh
 ```
 
+## Export the below Env for Smooth ETCD Interations:
+```
+export ETCDCTL_API=3
+export ETCDCTL_CACERT=/etc/kubernetes/pki/etcd/ca.crt
+export ETCDCTL_CERT=/etc/kubernetes/pki/etcd/server.crt
+export ETCDCTL_KEY=/etc/kubernetes/pki/etcd/server.key
+```
+
+
+
 ## Check the ETCD Status
 ```  
-# ETCDCTL_API=3 etcdctl --cacert="/etc/kubernetes/pki/etcd/ca.crt"  --cert="/etc/kubernetes/pki/etcd/server.crt" --key="/etc/kubernetes/pki/etcd/server.key" endpoint status  --write-out=table
+etcdctl endpoint status  --write-out=table
 ```
 
 ```
@@ -21,22 +31,22 @@ kubectl exec -it etcd-master -n kube-system   -- /bin/sh
 +----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
 | 127.0.0.1:2379 | c22785f83a00f446 |   3.4.3 |  5.0 MB |      true |      false |         2 |      37052 |              37052 |        |
 +----------------+------------------+---------+---------+-----------+------------+-----------+------------+--------------------+--------+
-#
+
 ```
 
 ## Checking the ETCD Prefix
 ```
-ETCDCTL_API=3 etcdctl --cacert="/etc/kubernetes/pki/etcd/ca.crt"  --cert="/etc/kubernetes/pki/etcd/server.crt" --key="/etc/kubernetes/pki/etcd/server.key" get / --prefix --keys-only
+etcdctl  get / --prefix --keys-only
 ```
 
 ## ETCD Backup
 ```
-etcdctl --endpoints=https://127.0.0.1:2379 snapshot save /path/to/backup.db
+etcdctl  --endpoints=https://127.0.0.1:2379 snapshot save /tmp/backup.db
 ```
 
 ## ETCD Snapshot
 ```
-etcdctl snapshot status /path/to/backup.db
+etcdctl snapshot status /tmp/backup.db
 ```
 
 
