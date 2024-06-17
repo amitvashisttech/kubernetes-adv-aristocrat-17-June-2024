@@ -22,7 +22,7 @@ export ETCDCTL_KEY=/etc/kubernetes/pki/etcd/server.key
 
 ## Check the ETCD Status
 ```  
-ETCDCTL_API=3 etcdctl endpoint status  --write-out=table
+etcdctl endpoint status  --write-out=table
 ```
 
 ```
@@ -36,7 +36,7 @@ ETCDCTL_API=3 etcdctl endpoint status  --write-out=table
 
 ## Checking the ETCD Prefix
 ```
-ETCDCTL_API=3 etcdctl  get / --prefix --keys-only
+etcdctl  get / --prefix --keys-only
 ```
 
 ## ETCD Backup
