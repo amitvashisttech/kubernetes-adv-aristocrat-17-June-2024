@@ -22,19 +22,12 @@ kubectl describe pods hello-k8s
 
 Note Point : In Case you are getting imagepull error stating that you have reached to max limit of downloads, then apply the following solution. 
 
-# Docker login
-```
-docker login
-ls /root/.docker/config.json
-```
 
 # Create a Secret in K8s for Docker Registry
 ```
-kubectl create secret generic regcred --from-file=.dockerconfigjson=/root/.docker/config.json --type=kubernetes.io/dockerconfigjson
-
+kubectl create secret docker-registry regcred --docker-username=user --docker-password=password
 kubectl get secrets
 ```
-
 
 ## Now Genrate Nginx Deployment Config:
 ```
