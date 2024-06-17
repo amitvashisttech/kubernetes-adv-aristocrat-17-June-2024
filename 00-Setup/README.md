@@ -25,7 +25,7 @@ Note :
 vagrant.exe ssh master
 sudo su - 
 git clone https://github.com/amitvashisttech/kubernetes-adv-aristocrat-17-June-2024.git
-cd 00-Setup
+cd kubernetes-adv-aristocrat-17-June-2024/00-Setup
 sh install-k8s-master-node.sh
 
 ---
