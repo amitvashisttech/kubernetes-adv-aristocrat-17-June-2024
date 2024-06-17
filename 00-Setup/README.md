@@ -69,7 +69,7 @@ k8s-master   Ready    master   5m6s   v1.18.0
 vagrant.exe ssh woker1
 sudo su - 
 git clone https://github.com/amitvashisttech/kubernetes-adv-aristocrat-17-June-2024.git
-cd kubernetes-adv-aristocrat-17-June-202400-Setup
+cd kubernetes-adv-aristocrat-17-June-2024/00-Setup
 sh install-k8s-worker-node.sh
 ```
 
