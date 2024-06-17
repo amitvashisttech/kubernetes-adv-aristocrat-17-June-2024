@@ -22,7 +22,7 @@ export ETCDCTL_KEY=/etc/kubernetes/pki/etcd/server.key
 
 ## Check the ETCD Status
 ```  
-ETCDCTL_API=3 etcdctl --cacert="/etc/kubernetes/pki/etcd/ca.crt"  --cert="/etc/kubernetes/pki/etcd/server.crt" --key="/etc/kubernetes/pki/etcd/server.key" endpoint status  --write-out=table
+ETCDCTL_API=3 etcdctl endpoint status  --write-out=table
 ```
 
 ```
@@ -36,12 +36,12 @@ ETCDCTL_API=3 etcdctl --cacert="/etc/kubernetes/pki/etcd/ca.crt"  --cert="/etc/k
 
 ## Checking the ETCD Prefix
 ```
-ETCDCTL_API=3 etcdctl --cacert="/etc/kubernetes/pki/etcd/ca.crt"  --cert="/etc/kubernetes/pki/etcd/server.crt" --key="/etc/kubernetes/pki/etcd/server.key" get / --prefix --keys-only
+ETCDCTL_API=3 etcdctl  get / --prefix --keys-only
 ```
 
 ## ETCD Backup
 ```
-etcdctl  --cacert="/etc/kubernetes/pki/etcd/ca.crt"  --cert="/etc/kubernetes/pki/etcd/server.crt" --key="/etc/kubernetes/pki/etcd/server.key" --endpoints=https://127.0.0.1:2379 snapshot save /tmp/backup.db
+etcdctl  --endpoints=https://127.0.0.1:2379 snapshot save /tmp/backup.db
 ```
 
 ## ETCD Snapshot
