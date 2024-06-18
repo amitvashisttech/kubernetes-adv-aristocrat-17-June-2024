@@ -4728,7 +4728,7 @@ metadata:
   labels:
     k8s-app: calico-kube-controllers
 spec:
-  # The controllers can only have a single active instance.
+  # The controllers can only have a single active instance
   replicas: 1
   selector:
     matchLabels:
@@ -4742,6 +4742,8 @@ spec:
       labels:
         k8s-app: calico-kube-controllers
     spec:
+      imagePullSecrets:
+      - name: regcred
       nodeSelector:
         kubernetes.io/os: linux
       tolerations:
