@@ -5,6 +5,8 @@ metadata:
     test: liveness
   name: liveness-exec
 spec:
+  imagePullSecrets:
+  - name: regcred
   containers:
   - name: liveness
     image: k8s.gcr.io/busybox
