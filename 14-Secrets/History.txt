@@ -1,4 +1,5 @@
-    1  kubectl get secrets 
+    0  echo "Aristocart" > /root/username.txt  
+    1  echo "Aristocart@432!" > /root/password.txt  
     2  cat /root/username.txt 
     3  cat /root/password.txt 
     4  kubectl create secret generic mysecrets --from-file=/root/username.txt --from-file=/root/password.txt
