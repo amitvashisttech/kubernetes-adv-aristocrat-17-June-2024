@@ -14,13 +14,13 @@ spec:
       labels:
         app: helloworld-db
     spec:
-      imagePullPolicy: IfNotPresent      
       imagePullSecrets:
       - name: regcred
       containers:
       - name: k8s-demo
         image: amitvashist7/k8s-demo
         command: ["node", "index-db.js"]
+        imagePullPolicy: IfNotPresent      
         ports:
         - name: nodejs-port
           containerPort: 3000
