@@ -14,7 +14,7 @@ spec:
       labels:
         app: helloworld-db
     spec:
-      imagePullPolicy: IfNotPresent      
+      
       imagePullSecrets:
       - name: regcred
       containers:
