@@ -8,5 +8,5 @@ spec:
     protocol: TCP
   selector:
     app: database
-  type: NodePort
+  type: ClusterIP
 
